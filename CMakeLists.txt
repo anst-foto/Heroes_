@@ -10,4 +10,5 @@ add_executable(Heroes main.cpp
         Weapons/Weapon.h
         Weapons/MageWeapon.h
         Weapons/WarriorWeapon.h
-        Weapons/UniversalWeapon.h)
+        Weapons/UniversalWeapon.h
+        Print.h)
