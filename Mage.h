@@ -11,6 +11,19 @@ public:
     Mage(const string& name)
         : Hero(name, DAMAGE_DEFAULT)
     {}
+
+    virtual ~Mage() = default;
+
+    bool setWeapon(Weapon* weapon) override {
+        if (weapon->getType() == WeaponType::Mage ||
+            weapon->getType() == WeaponType::Universal) {
+            _weapon = weapon;
+
+            return true;
+        }
+
+        return false;
+    }
 };
 
 

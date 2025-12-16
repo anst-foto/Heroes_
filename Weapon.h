@@ -19,6 +19,19 @@ protected:
           _name(name),
           _damage(damage)
     {}
+
+public:
+    WeaponType getType() const {
+        return _type;
+    }
+
+    std::string getName() const {
+        return _name;
+    }
+
+    unsigned int getDamage() const {
+        return _damage;
+    }
 };
 
 

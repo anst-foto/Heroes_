@@ -10,6 +10,18 @@ public:
     Warrior(const std::string &name)
         : Hero(name, DAMAGE_DEFAULT)
     {}
+
+    virtual ~Warrior() = default;
+
+    bool setWeapon(Weapon *weapon) override {
+        if (weapon->getWeaponType() == WeaponType::Warrior ||
+            weapon->getWeaponType() == WeaponType::Universal) {
+            _weapon = weapon;
+            return true;
+        }
+
+        return false;
+    }
 };
 
 

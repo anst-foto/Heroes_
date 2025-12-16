@@ -40,7 +40,7 @@ classDiagram
         - string _name
         - unsigned int _health
         - unsigned int _damage
-        - Weapon _weapon
+        # Weapon _weapon
         # Hero(const string& name, unsigned int damage)
         
         + void attack(Hero* enemy)
