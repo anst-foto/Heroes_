@@ -10,14 +10,15 @@ private:
     const unsigned int MAX_HEALTH = 100;
 
     std::string _name;
-    unsigned int _health;
+    int _health;
     unsigned int _damage;
 
 protected:
     Hero(const std::string& name, unsigned int damage) {
         _name = name;
-        _health = MAX_HEALTH;
+        _health = 10; //FIXME
         _damage = damage;
+        _weapon = nullptr;
     }
 
     ~Hero() {
@@ -27,7 +28,7 @@ protected:
     Weapon* _weapon;
 
 public:
-    bool isAlive() {
+    bool isAlive() const {
         return _health > 0;
     }
 
@@ -35,11 +36,14 @@ public:
         return _name;
     }
 
-    unsigned int getHealth() const {
-        return _health;
+    int getHealth() const {
+        return _health <= 0 ? 0 : _health;
     }
 
     unsigned int getDamage() const {
+        if (_weapon == nullptr) {
+            return _damage;
+        }
         return _damage + _weapon->getDamage();
     }
 
@@ -50,7 +54,7 @@ public:
     virtual bool setWeapon(Weapon* weapon) = 0;
 
     void attack(Hero* enemy) {
-        enemy->_health -= _damage + _weapon->getDamage();
+        enemy->_health -= this->getDamage();
     }
 };
 

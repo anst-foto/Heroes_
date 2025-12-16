@@ -8,14 +8,14 @@ private:
     const unsigned int DAMAGE_DEFAULT = 15;
 public:
     Warrior(const std::string &name)
-        : Hero(name, DAMAGE_DEFAULT)
+        : Hero(name, 15) //FIXME
     {}
 
     virtual ~Warrior() = default;
 
     bool setWeapon(Weapon *weapon) override {
-        if (weapon->getWeaponType() == WeaponType::Warrior ||
-            weapon->getWeaponType() == WeaponType::Universal) {
+        if (weapon->getType() == WeaponType::Warrior ||
+            weapon->getType() == WeaponType::Universal) {
             _weapon = weapon;
             return true;
         }
