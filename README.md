@@ -18,6 +18,9 @@ classDiagram
         - string _name
         - unsigned int _damage
         # Weapon(WeaponType type, const string& name, unsigned int damage)
+        + WeaponType getType()
+        + string getName()
+        + unsigned int getDamage()
     }
     
     class MageWeapon {
@@ -37,18 +40,32 @@ classDiagram
         - string _name
         - unsigned int _health
         - unsigned int _damage
-        - weapon : Weapon
+        - Weapon _weapon
         # Hero(const string& name, unsigned int damage)
+        
+        + void attack(Hero* enemy)
+        + bool isAlive()
+        + void setWeapon(Weapon* weapon)
+        
+        + string getName()
+        + unsigned int getHealth()
+        + unsigned int getDamage()
     }
     
     class Mage {
         - const unsigned int DAMAGE_DEFAULT = 10
+        
         + Mage(const string& name)
+        
+        + void setWeapon(Weapon* weapon)
     }
     
     class Warrior {
         - const unsigned int DAMAGE_DEFAULT = 15
+        
         + Warrior(const string& name)
+        
+        + void setWeapon(Weapon* weapon)
     }
     
     %% Наследование для оружия
