@@ -3,9 +3,7 @@
 ---
 title: Heroes
 ---
-classDiagram
-    direction TB
-    
+classDiagram   
     class WeaponType {
         <<enumeration>>
         Universal
