@@ -1,7 +1,7 @@
 #ifndef HEROES_MAGE_H
 #define HEROES_MAGE_H
 
-#include "Hero.h"
+#include "../Hero.h"
 
 class Mage : public Hero {
 private:

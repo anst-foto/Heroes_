@@ -4,10 +4,10 @@ project(Heroes)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Heroes main.cpp
-        Hero.h
-        Mage.h
-        Warrior.h
-        Weapon.h
-        MageWeapon.h
-        WarriorWeapon.h
-        UniversalWeapon.h)
+        Heroes/Hero.h
+        Heroes/Mage.h
+        Heroes/Warrior.h
+        Weapons/Weapon.h
+        Weapons/MageWeapon.h
+        Weapons/WarriorWeapon.h
+        Weapons/UniversalWeapon.h)

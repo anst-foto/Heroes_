@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "Weapon.h"
+#include "../Weapons/Weapon.h"
 
 class Hero {
 private:
