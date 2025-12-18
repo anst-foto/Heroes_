@@ -4,12 +4,9 @@
 #include "Hero.h"
 
 class Mage : public Hero {
-private:
-    const unsigned int DAMAGE_DEFAULT = 10;
-
 public:
-    Mage(const std::string& name)
-        : Hero(name, 10) //FIXME
+    Mage(const std::string& name, unsigned int damage)
+        : Hero(name, damage)
     {}
 
     virtual ~Mage() = default;

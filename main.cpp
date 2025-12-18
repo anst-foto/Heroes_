@@ -5,6 +5,10 @@
 #include "Heroes/Mage.h"
 #include "Heroes/Warrior.h"
 
+#include "Heroes/HeroesFactory/HeroFactory.h"
+#include "Heroes/HeroesFactory/MageFactory.h"
+#include "Heroes/HeroesFactory/WarriorFactory.h"
+
 #include "Weapons/Weapon.h"
 #include "Weapons/MageWeapon.h"
 #include "Weapons/WarriorWeapon.h"
@@ -13,8 +17,14 @@
 #include  "Print.h"
 
 int main() {
-    Hero* hero = new Mage("Mage");
-    Hero* enemy = new Warrior("Warrior");
+    Hero* hero;
+    Hero* enemy;
+
+    HeroFactory* factory1 = new MageFactory();
+    HeroFactory* factory2 = new WarriorFactory();
+
+    hero = factory1->createHero("hero");
+    enemy = factory2->createHero("enemy");
 
     Weapon* weapon1 = new UniversalWeapon("weapon1",10);
     Weapon* weapon2 = new MageWeapon("weapon2",10);

@@ -7,6 +7,9 @@ add_executable(Heroes main.cpp
         Heroes/Hero.h
         Heroes/Mage.h
         Heroes/Warrior.h
+        Heroes/HeroesFactory/HeroFactory.h
+        Heroes/HeroesFactory/MageFactory.h
+        Heroes/HeroesFactory/WarriorFactory.h
         Weapons/Weapon.h
         Weapons/MageWeapon.h
         Weapons/WarriorWeapon.h
